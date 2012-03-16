@@ -1,34 +1,34 @@
 require 'rspec'
-require 'jslint/source'
+require 'csslint/source'
 
-describe 'JSLint::Source' do
+describe 'CSSLint::Source' do
   describe '.path' do
-    subject { JSLint::Source.path }
+    subject { CSSLint::Source.path }
     it 'returns the bundled path' do
-      subject.should == File.expand_path('../../vendor/jslint/jslint.js',__FILE__)
+      subject.should == File.expand_path('../../vendor/csslint/release/csslint.js',__FILE__)
     end
 
-    it 'respects the JSLINT_PATH ENV variable' do
+    it 'respects the CSSLINT_PATH ENV variable' do
       begin
-        ENV['JSLINT_PATH'] = 'foobar'
+        ENV['CSSLINT_PATH'] = 'foobar'
         subject.should == 'foobar'
       ensure
-        ENV.delete('JSLINT_PATH')
+        ENV.delete('CSSLINT_PATH')
       end
     end
   end
 
   describe '.contents' do
-    subject { JSLint::Source.contents }
-    it 'returns the contents of the jslint source' do
-      subject.should == File.read(JSLint::Source.path)
+    subject { CSSLint::Source.contents }
+    it 'returns the contents of the csslint source' do
+      subject.should == File.read(CSSLint::Source.path)
     end
   end
 
   describe '.version' do
-    subject { JSLint::Source.version }
-    it 'returns the version of the jslint source' do
-      subject.should =~ /201\d-\d{2}-\d{2}/
+    subject { CSSLint::Source.version }
+    it 'returns the version of the csslint source' do
+      subject.should =~ / \d+ [.] \d+ [.] \d+ /x
     end
   end
 end

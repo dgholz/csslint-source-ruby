@@ -1,11 +1,11 @@
-jslint.js
+csslint.js
 ---------
-Copyright (c) 2002 Douglas Crockford
-See vendor/jslint/jslint.js for full licence.
+Copyright (c) 2011 Nicole Sullivan and Nicholas C. Zakas. All rights reserved.
+See vendor/csslint/LICENSE for full licence.
 
 All other files
 ---------------
-Copyright (c) 2012, Mint Digital
+Copyright (c) 2012, Mint Digital, Daniel Holz
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
